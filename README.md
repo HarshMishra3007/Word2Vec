@@ -4,14 +4,7 @@ Downloaded the pretrained set of Word2Vec vectors from https://drive.google.com/
 
 
 
-
-
-
-
-
-
-
-
+![image](https://github.com/HarshMishra3007/Word2Vec/assets/122306414/8d8d69f0-ea2b-43d0-b219-4f04a219dd70)
 
 
 
