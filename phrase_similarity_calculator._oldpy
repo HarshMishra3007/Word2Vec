@@ -1,0 +1,16 @@
+# phrase_similarity_calculator.py
+import numpy as np
+class PhraseSimilarityCalculator:
+    def __init__(self, word_embedder, distance_calculator):
+        self.word_embedder = word_embedder
+        self.distance_calculator = distance_calculator
+
+    def calculate_phrase_similarity(self, phrase1, phrase2):
+        embeddings1 = [self.word_embedder.get_embedding(word) for word in phrase1.split()]
+        embeddings2 = [self.word_embedder.get_embedding(word) for word in phrase2.split()]
+
+        # Approximate phrase vectors by normalizing the sum of word embeddings
+        vector1 = np.sum(embeddings1, axis=0) / np.linalg.norm(np.sum(embeddings1, axis=0))
+        vector2 = np.sum(embeddings2, axis=0) / np.linalg.norm(np.sum(embeddings2, axis=0))
+
+        return self.distance_calculator.calculate_distance(vector1, vector2)
